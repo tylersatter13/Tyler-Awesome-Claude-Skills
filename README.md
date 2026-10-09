@@ -28,8 +28,7 @@ folder, works out the phase, and hands off to the next skill.
 | build-slice | Build | draft |
 | dotnet-test | Build / Verify | draft |
 | simplify-pass | Verify | draft |
-| review-gate | Verify | planned |
-| ship-pr | Ship | planned |
+| review-gate | Verify | draft |
 | diagnose, learn, scaffold-service | Supporting | planned |
 
 ## Overriding conventions

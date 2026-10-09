@@ -10,7 +10,7 @@
 | Secrets + config | | |
 | HttpClient + resilience | | |
 | Logging + correlation | | |
-| Migrations safe to roll back | | |
+| Schema changes safe to roll back (or n/a) | | |
 
 ## Deviations
 - <rule> skipped because <reason>
