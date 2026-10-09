@@ -89,4 +89,4 @@ Its question: *would a careful senior .NET reviewer approve this as-is?*
 
 ## Next skill
 
-`ship-pr`.
+None: tell the user the branch is ready for them to open a PR. After it merges, `learn`.

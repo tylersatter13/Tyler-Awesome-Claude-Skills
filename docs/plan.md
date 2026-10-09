@@ -57,7 +57,7 @@ Recording that reason is the rule; following every phase is not.
 | 6 | **`dotnet-test`** | Build / Verify | Writes the right kind of test for the job: MSTest unit tests, `WebApplicationFactory` API tests, Testcontainers for real databases and brokers, WireMock.Net for faking partner APIs, and contract tests for integrations. Also handles "add tests to this existing code". |
 | 7a | **`simplify-pass`** | Verify | Looks over the task's diff for unnecessary complexity: single-implementation interfaces, generic repositories over EF Core, pass-through layers, hand-rolled versions of framework features, deep nesting, and dead code. Applies changes one at a time with tests kept green. Added at Tyler's request. |
 | 7 | **`review-gate`** | Verify | A .NET-specific self-review before a human sees it: async misuse (`.Result`, missing `CancellationToken`), `HttpClient` lifetime, nullable warnings, EF query issues (N+1, tracking, unbounded queries), secrets in config, input validation, authZ on every endpoint, structured logging and correlation IDs, and health checks. Writes `review.md`. |
-| 8 | **`ship-pr`** | Ship | Writes the PR description from `spec.md`, `decisions.md`, and `review.md`: before and after, how to test, migrations, new config or secrets, feature flags, and rollback steps. |
+| 8 | **`ship-pr`** (deferred by Tyler, 2026-10-09; you open PRs yourself) | Ship | Writes the PR description from `spec.md`, `decisions.md`, and `review.md`: before and after, how to test, migrations, new config or secrets, feature flags, and rollback steps. |
 
 ### Supporting skills (add once the core loop feels right)
 
@@ -71,12 +71,12 @@ Recording that reason is the rule; following every phase is not.
 ## 4. How a typical task flows
 
 **New partner integration:** `dev-flow` → `frame-task` → `integration-design` (+ `api-design`
-if you expose a webhook) → `build-slice` ×N with `dotnet-test` → `simplify-pass` → `review-gate` → `ship-pr` → `learn`.
+if you expose a webhook) → `build-slice` ×N with `dotnet-test` → `simplify-pass` → `review-gate` → open PR → `learn`.
 
 **Small endpoint change:** `dev-flow` → `frame-task` (two-line spec) → skip Design with a recorded
-reason → `build-slice` → `simplify-pass` → `review-gate` → `ship-pr`.
+reason → `build-slice` → `simplify-pass` → `review-gate` → open PR.
 
-**Production bug:** `diagnose` → `build-slice` → `review-gate` → `ship-pr`.
+**Production bug:** `diagnose` → `build-slice` → `review-gate` → open PR.
 
 ## 5. Suggested build order
 

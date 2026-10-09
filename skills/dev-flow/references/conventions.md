@@ -62,4 +62,3 @@ overrides both. Each rule has a short reason so it can be judged rather than fol
 
 - Branch names: `<type>/<issue-or-key>-<short-name>`, for example `feat/PAY-311-refund-sync`.
 - Small PRs; one acceptance criterion or slice per commit when practical.
-- The PR description comes from `pr.md` (see `ship-pr`).

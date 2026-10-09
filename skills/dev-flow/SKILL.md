@@ -17,7 +17,7 @@ task and routes to the right phase skill.
 | Design | `api-design`, `integration-design`, `ef-migration` | `design.md` | Contract and data changes decided; decisions logged |
 | Build | `build-slice` + `dotnet-test` | code, tests | Every acceptance criterion has a passing MSTest test; build is clean |
 | Verify | `simplify-pass`, then `review-gate` | `review.md` | Unneeded complexity removed with tests still green; checklist passes, or each deviation is recorded with a reason |
-| Ship | `ship-pr` | `pr.md` | PR text covers testing, migrations, config, rollback |
+| Ship | none (you open the PR) | | `review.md` has no open failures and the branch is pushed |
 | Learn | `learn` | conventions edits | Lessons turned into rules or skill edits |
 
 Any phase may be skipped, but the skip is recorded in `decisions.md` with a one-line reason.
@@ -61,8 +61,8 @@ Load conventions in this order; later ones win:
    - `design.md` (or a recorded skip) and acceptance criteria without passing tests → Build
    - all criteria covered but no `review.md` → Verify (start with `simplify-pass`)
    - `review.md` has a Simplification section but no checklist results → Verify (`review-gate`)
-   - `review.md` but no `pr.md` → Ship
-   - `pr.md` exists → Learn
+   - `review.md` with no open failures → Ship: tell the user the branch is ready for them to open a PR
+   - the PR has merged → Learn
 5. **Report and route.** Tell the user in two or three lines: the task, the phase, and the next
    skill. Then invoke it unless the user only asked for status.
 
@@ -74,5 +74,5 @@ A new partner integration gets the full loop. When unsure, ask once: "full flow 
 ## Skills in this suite
 
 `frame-task`, `api-design`, `integration-design`, `ef-migration`, `build-slice`, `dotnet-test`,
-`simplify-pass`, `review-gate`, `ship-pr`, `diagnose`, `learn`, `scaffold-service`. If a skill isn't installed yet,
-do that phase directly by following the exit criteria above and the template for its file.
+`simplify-pass`, `review-gate`, `diagnose`, `learn`, `scaffold-service`. Ship has no skill; the user opens
+the PR themselves. If a skill isn't installed yet, do that phase directly by following the exit criteria above and the template for its file.
