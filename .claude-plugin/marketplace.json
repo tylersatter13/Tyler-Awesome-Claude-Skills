@@ -1,0 +1,15 @@
+{
+  "name": "tylersatter13-skills",
+  "description": "Tyler's Claude Code skills for .NET API and Azure integration work.",
+  "owner": {
+    "name": "Tyler",
+    "url": "https://github.com/tylersatter13"
+  },
+  "plugins": [
+    {
+      "name": "dotnet-flow",
+      "source": "./",
+      "description": "Coordinated .NET API and Azure integration workflow skills."
+    }
+  ]
+}
