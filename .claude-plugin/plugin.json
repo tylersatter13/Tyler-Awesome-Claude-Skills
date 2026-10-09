@@ -1,0 +1,12 @@
+{
+  "name": "dotnet-flow",
+  "version": "0.1.0",
+  "description": "A coordinated set of skills for building .NET APIs and Azure integrations: Frame, Design, Build, Verify, Ship, Learn.",
+  "author": {
+    "name": "Tyler",
+    "url": "https://github.com/tylersatter13"
+  },
+  "repository": "https://github.com/tylersatter13/Tyler-Awesome-Claude-Skills",
+  "license": "MIT",
+  "keywords": ["dotnet", "aspnetcore", "efcore", "azure", "workflow"]
+}
