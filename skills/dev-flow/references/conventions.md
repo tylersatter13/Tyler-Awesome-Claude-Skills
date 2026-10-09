@@ -50,6 +50,7 @@ overrides both. Each rule has a short reason so it can be judged rather than fol
 ## Testing (MSTest)
 
 - MSTest (`MSTest` meta-package / MSTest.Sdk) with `[TestClass]`/`[TestMethod]`; `[DataRow]` for cases.
+- Assertions use AwesomeAssertions (`result.Should().Be(...)`) for readable tests and failure messages.
 - Name tests `Method_Scenario_ExpectedResult`.
 - Unit tests for domain and service logic; no mocks of EF Core. Use real databases instead.
 - API tests use `WebApplicationFactory<Program>` and a real `HttpClient`.

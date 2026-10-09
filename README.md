@@ -20,13 +20,13 @@ folder, works out the phase, and hands off to the next skill.
 
 | Skill | Phase | Status |
 |---|---|---|
-| dev-flow | Hub | ready |
-| frame-task | Frame | planned |
+| dev-flow | Hub | draft |
+| frame-task | Frame | draft |
 | api-design | Design | planned |
 | integration-design | Design | planned |
 | ef-migration | Design | planned |
-| build-slice | Build | planned |
-| dotnet-test | Build / Verify | planned |
+| build-slice | Build | draft |
+| dotnet-test | Build / Verify | draft |
 | simplify-pass | Verify | draft |
 | review-gate | Verify | planned |
 | ship-pr | Ship | planned |
