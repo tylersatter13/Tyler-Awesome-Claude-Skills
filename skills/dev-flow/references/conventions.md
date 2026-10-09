@@ -28,7 +28,7 @@ overrides both. Each rule has a short reason so it can be judged rather than fol
 - Reads use `AsNoTracking()` and project to DTOs with `Select`. No `ToList()` before filtering.
 - Every query that can grow is paged or bounded.
 - Watch for N+1 queries: use `Include` deliberately or project.
-- Migrations are reviewed as SQL (`dotnet ef migrations script`) before they run anywhere shared. Breaking changes use expand and contract.
+- Where the repo uses EF Core migrations, they are reviewed as SQL (`dotnet ef migrations script`) before they run anywhere shared. Breaking changes use expand and contract.
 - Money uses `decimal` with an explicit precision; time uses `DateTimeOffset` in UTC.
 
 ## Azure
