@@ -22,9 +22,9 @@ folder, works out the phase, and hands off to the next skill.
 |---|---|---|
 | dev-flow | Hub | draft |
 | frame-task | Frame | draft |
-| api-design | Design | planned |
-| integration-design | Design | planned |
-| ef-migration | Design | planned |
+| api-design | Design | draft |
+| integration-design | Design | draft |
+| ef-migration | Design | draft |
 | build-slice | Build | draft |
 | dotnet-test | Build / Verify | draft |
 | simplify-pass | Verify | draft |
