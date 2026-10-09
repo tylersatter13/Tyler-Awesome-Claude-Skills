@@ -25,7 +25,7 @@ Part of the `dotnet-flow` suite (see `dev-flow`). Used in **Build** (test first)
 
 | What's being checked | Test type | Tools |
 |---|---|---|
-| Pure logic: calculations, mapping, rules | Unit | MSTest only |
+| Pure logic: calculations, mapping, rules | Unit | MSTest + AwesomeAssertions |
 | Endpoint behavior: status, body, auth, validation | API | `WebApplicationFactory<Program>` + `HttpClient` |
 | EF Core queries, constraints, migrations | Integration | Testcontainers SQL Server (never the in-memory provider) |
 | Blob/queue/table storage | Integration | Testcontainers Azurite |
@@ -41,7 +41,8 @@ Use unit tests for logic with many cases (`[DataRow]`).
    `Post_Orders_WithMissingSku_Returns400`). Put the criterion ID in a comment or `[Description]`.
 2. Check the infrastructure exists (factory, containers, WireMock server). If not, add it once at
    assembly level using the patterns reference, then reuse it.
-3. Write the test with Arrange / Act / Assert. Assert on what the criterion says: the status code,
+3. Write the test with Arrange / Act / Assert, using AwesomeAssertions (`.Should()`) so a failure
+   reads like a sentence. Assert on what the criterion says: the status code,
    the `ProblemDetails` fields, the persisted row, the outbound call WireMock received. Don't assert
    on internals.
 4. Run it and confirm it fails for the expected reason before the code exists (test first),
