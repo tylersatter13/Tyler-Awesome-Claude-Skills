@@ -1,6 +1,6 @@
 ---
 name: ef-migration
-description: Plan and create safe EF Core schema changes - entity configuration, migrations, expand-and-contract for breaking changes, data backfills, and rollback. Use when a task adds or changes tables, columns, indexes, or relationships, or when asked to create or review an EF Core migration.
+description: Plan and create safe EF Core migrations - entity configuration, expand-and-contract for breaking changes, data backfills, and rollback. Use only in repos that manage their schema with EF Core migrations, when a task adds or changes tables, columns, indexes, or relationships, or when asked to create or review an EF Core migration.
 ---
 
 # ef-migration
@@ -8,6 +8,20 @@ description: Plan and create safe EF Core schema changes - entity configuration,
 Part of the `dotnet-flow` suite (see `dev-flow`). Runs in the **Design** phase, and again in
 **Build** when the migration is created. Its question: *can this schema change be deployed and
 rolled back without downtime or data loss?*
+
+## First: does this repo use EF Core migrations?
+
+This skill applies only when the schema is managed by EF Core migrations. Check for a `Migrations`
+folder containing a `*ModelSnapshot.cs` and a reference to `Microsoft.EntityFrameworkCore.Design`.
+
+If they aren't there, the schema is managed some other way (a SQL Server Database Project / DACPAC,
+DbUp or another script runner, a separate DBA-owned process, or database-first scaffolding). In that case:
+
+- Don't create EF migrations or add the EF tooling.
+- Record in `decisions.md` that the repo doesn't use EF migrations, and how it does manage schema.
+- Note the needed schema change in the Data changes section of `design.md` so the user can apply it
+  their usual way. If the repo is database-first, the user may need to re-scaffold the entities afterwards.
+- Hand straight back to `build-slice`.
 
 ## When to use
 

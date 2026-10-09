@@ -41,7 +41,8 @@ should still pass its tests.
      repo already puts it.
    - Service: plain class registered in DI. Add an interface only when something needs to swap it.
    - EF Core: use the existing `DbContext`; configuration in an `IEntityTypeConfiguration<T>`.
-     If the schema changes, hand off to `ef-migration` before continuing.
+     If the schema changes, hand off to `ef-migration` before continuing when the repo uses EF Core
+     migrations; otherwise note the change in `design.md` for the user to apply their usual way.
    - Errors map to `ProblemDetails` through the existing handler, not try/catch in the controller.
    - Outbound calls go through a typed `HttpClient` already designed in `design.md`.
 4. **Run the tests**: `dotnet build` (warnings are errors), then `dotnet test` for the affected

@@ -45,8 +45,9 @@ Load conventions in this order; later ones win:
 
 ## Steps
 
-1. **Locate the repo context.** Find the solution file, target framework, test projects, and
-   whether `docs/conventions.md` exists.
+1. **Locate the repo context.** Find the solution file, target framework, test projects,
+   whether `docs/conventions.md` exists, and whether the schema is managed by EF Core migrations
+   (a `Migrations` folder with a `*ModelSnapshot.cs`). Skip `ef-migration` in repos without them.
 2. **Identify the task.**
    - `#123` or a GitHub issue URL: `gh issue view <n> --comments`.
    - A Jira key like `ABC-123`: read it through the Atlassian connector if available; otherwise

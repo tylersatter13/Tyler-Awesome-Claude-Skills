@@ -59,5 +59,5 @@ Its question: *what exactly will callers send and get back, including when thing
 
 ## Next skill
 
-`integration-design` if the task calls external systems, `ef-migration` if the schema changes,
+`integration-design` if the task calls external systems, `ef-migration` if the schema changes and the repo uses EF Core migrations,
 otherwise `build-slice`.

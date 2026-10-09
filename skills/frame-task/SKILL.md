@@ -43,7 +43,7 @@ Its question: *what are we building, and how will we know it works?*
    the spec can be two lines and one criterion.
 6. **Suggest the next phase.** If the task adds or changes endpoints, the next skill is
    `api-design`. If it calls an external system or uses Service Bus, it is `integration-design`.
-   If it changes the schema, it is `ef-migration`. If none apply, record a Design skip in
+   If it changes the schema and the repo uses EF Core migrations, it is `ef-migration`. If none apply, record a Design skip in
    `decisions.md` and go straight to `build-slice`.
 
 ## Exit criteria

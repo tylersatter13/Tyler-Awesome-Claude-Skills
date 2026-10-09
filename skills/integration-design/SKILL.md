@@ -70,4 +70,4 @@ Its question: *what happens when the other side is slow, down, wrong, or sends t
 
 ## Next skill
 
-`ef-migration` if the outbox or inbox needs tables, otherwise `build-slice`.
+`ef-migration` if the outbox or inbox needs tables and the repo uses EF Core migrations, otherwise `build-slice`.
